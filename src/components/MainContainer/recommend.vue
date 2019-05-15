@@ -140,7 +140,16 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+    // data(){
+    //   return {};
+    // },
+    // mounted(){
+    //  this.$axios.get('/search?keywords=fakelove').then(function(response){
+    //       console.log(response);
+    //    })
+    // }
+};
 </script>
 
 <style scoped>

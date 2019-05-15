@@ -34,26 +34,50 @@
                     <li class="">
                         <span class="top">1</span>
                         <a class="top-list-name" href="#">心如止水</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">2</span>
                         <a class="top-list-name" href="#">路过人间</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">3</span>
                         <a class="top-list-name" href="#">归去来兮</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">4</span>
                         <a class="top-list-name" href="#">绿色</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">5</span>
                         <a class="top-list-name" href="#">宠坏</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">6</span>
                         <a class="top-list-name" href="#">别叫我达芬奇</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         
@@ -83,26 +107,50 @@
                     <li class="">
                         <span class="top">1</span>
                         <a class="top-list-name" href="#">心如止水</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">2</span>
                         <a class="top-list-name" href="#">路过人间</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">3</span>
                         <a class="top-list-name" href="#">归去来兮</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">4</span>
                         <a class="top-list-name" href="#">绿色</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                      <li class="">
                         <span class="toplist-number">5</span>
                         <a class="top-list-name" href="#">宠坏</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">6</span>
                         <a class="top-list-name" href="#">别叫我达芬奇</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         
@@ -132,26 +180,50 @@
                     <li class="">
                         <span class="top">1</span>
                         <a class="top-list-name" href="#">心如止水</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">2</span>
                         <a class="top-list-name" href="#">路过人间</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="top">3</span>
                         <a class="top-list-name" href="#">归去来兮</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">4</span>
                         <a class="top-list-name" href="#">绿色</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                      <li class="">
                         <span class="toplist-number">5</span>
                         <a class="top-list-name" href="#">宠坏</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         <span class="toplist-number">6</span>
                         <a class="top-list-name" href="#">别叫我达芬奇</a>
+                        <div class="mask">
+                             <i class="fa fa-play-circle-o list-item-play" aria-hidden="true"></i>
+                            
+                        </div>
                     </li>
                     <li class="">
                         
@@ -219,7 +291,9 @@ export default {
 }
 .toplist-type{
     width: 229px;
-    border: 1px solid #d3d3d3;
+    border-top: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
     float: left;
 }
 .top-title{
@@ -257,8 +331,6 @@ ol{
 }
 ol li{
    list-style-type:none;
-   /* border: 1px solid red; */
-   /* margin-left: 15px; */
    width: 227px;
    height: 26px;
    overflow: hidden;
@@ -290,5 +362,21 @@ li:nth-of-type(odd){
     float: right;
     margin-right: 20px;
     line-height: 26px;
+}
+
+.mask{
+    float: right;
+    margin-right: 25px;
+    opacity: 0;
+}
+.list-item-play{
+    color: #B0B0B0;
+}
+li:hover .mask{
+    opacity: 1;
+}
+.list-item-play:hover{
+    color: #8E8E8E;
+    cursor: pointer;
 }
 </style>

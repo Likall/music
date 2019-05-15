@@ -42,30 +42,30 @@
     <div class="md-container">
       <nav class="md-topbar">
         <ul class="nav justify-content-center md-nav-topbar">
-          <li class="nav-item md-nav-item-topbar md-active s1">
-            <a class="nav-link recommand-md-topbar" href="#">
+          <li class="nav-item md-nav-item-topbar s1" >
+             <router-link to="/recommands" class="nav-link">
               <span>推荐</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item md-nav-item-topbar s2">
-            <a class="nav-link" href="#">
+            <router-link to="/rakinglist" class="nav-link">
               <span>排行榜</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item md-nav-item-topbar s1">
-            <a class="nav-link" href="#">
+            <router-link class="nav-link" to="/classfiy">
               <span>歌单</span>
-            </a>
+            </router-link>
           </li>
-          <li class="nav-item md-nav-item-topbar s3">
-            <a class="nav-link" href="#">
+          <!-- <li class="nav-item md-nav-item-topbar s3">
+            <router-link class="nav-link" to="#">
               <span>主播电台</span>
-            </a>
-          </li>
+            </router-link>
+          </li> -->
           <li class="nav-item md-nav-item-topbar s1">
-            <a class="nav-link" href="#">
+            <router-link class="nav-link" to="/singer">
               <span>歌手</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item md-nav-item-topbar s3">
             <a class="nav-link" href="#">
@@ -264,10 +264,10 @@
   margin-left: 185px;
 }
 
-.md-active {
+/* .mdactive {
   background-color: #ac0000;
   border-radius: 20px;
-}
+} */
 .nav-link {
   padding: 0px;
   /* margin-top: -2px; */
@@ -297,9 +297,26 @@
 .md-nav-item-topbar :hover {
   background-color: #ac0000;
   border-radius: 20px;
-  height: 22px;
+  height: 24px;
+}
+
+/* 设置选中路由高亮 */
+.router-link-active{
+  background-color: #ac0000;
+  border-radius: 20px;
 }
 </style>
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      type:'recommands'
+    }
+  },
+  methods:{
+    changeToRakingList(){
+      this.type = 'rakinglist';
+    }
+  }
+};
 </script>

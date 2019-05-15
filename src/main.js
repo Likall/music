@@ -8,6 +8,16 @@ import VueRouter from 'vue-router'
 // 安装路由
 Vue.use(VueRouter)
 
+import axios from 'axios'
+// import Vueaxios from 'vue-axios'
+// Vue.use(axios,Vueaxios)
+axios.defaults.baseURL = 'http://localhost:3000'
+Vue.prototype.$axios = axios
+
+// mint-ui
+import { Popup } from 'mint-ui';
+
+Vue.component(Popup.name, Popup);
 // 配置使用.svg格式的图片
 import Icon from 'vue-svg-icon/Icon.vue'
 
