@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <header class="header-topbar">
     <div class="lg-container">
       <!-- 第一个导航栏 -->
@@ -32,6 +32,7 @@
           </div>
         </form>
         <button class="btn btn-sm btn-topbar" type="button">创作中心</button>
+<<<<<<< HEAD
         <div  class="login-topbar" >
         <a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal" >登录</a>
         <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -40,6 +41,9 @@
           <!--<a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal" >登录</a>-->
           <!--<i class="fa fa-caret-down" aria-hidden="true"></i>-->
         <!--</router-link>-->
+=======
+        
+>>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
       </nav>
     </div>
     <!-- 第二个导航栏 -->
@@ -79,7 +83,10 @@
         </ul>
       </nav>
     </div>
+<<<<<<< HEAD
     <ModalMain></ModalMain>
+=======
+>>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
   </header>
 </template>
 <style scoped>
@@ -312,7 +319,10 @@
 }
 </style>
 <script>
+<<<<<<< HEAD
   import ModalMain from "../Login/modalmain.vue"
+=======
+>>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
 export default {
   data(){
     return{
@@ -323,9 +333,12 @@ export default {
     changeToRakingList(){
       this.type = 'rakinglist';
     }
+<<<<<<< HEAD
   },
   components:{
     ModalMain
+=======
+>>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
   }
 };
 </script>
