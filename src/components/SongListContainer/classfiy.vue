@@ -3,7 +3,7 @@
     <div class="classfiy-content">
       <!-- 上面标题部分 -->
       <div class="classfiy-top-nav">
-        <h3 class="title">全部</h3>
+        <h3 class="title" >{{title}}</h3>
         <button class="btn-list" @click="popupVisible = !popupVisible">
           选择分类
           <i class="fa fa-caret-down" aria-hidden="true"></i>
@@ -21,19 +21,19 @@
               <dd>
                 <ol>
                   <li>
-                    <a href="#" class="popover-item">华语</a>
+                    <a href="#" class="popover-item" @click="title = '华语'">华语</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">欧美</a>
+                    <a href="#" class="popover-item" @click="title='欧美'">欧美</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">日语</a>
+                    <a href="#" class="popover-item" @click="title='日语'">日语</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">韩语</a>
+                    <a href="#" class="popover-item" @click="title='汉语'">韩语</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">粤语</a>
+                    <a href="#" class="popover-item" @click="title='粤语'">粤语</a>
                   </li>
                 </ol>
               </dd>
@@ -48,22 +48,22 @@
               <dd>
                 <ol>
                   <li>
-                    <a href="#" class="popover-item">流行</a>
+                    <a href="#" class="popover-item" @click="title='流行'">流行</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">摇滚</a>
+                    <a href="#" class="popover-item" @click="title='摇滚'">摇滚</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">民谣</a>
+                    <a href="#" class="popover-item" @click="title='民谣'">民谣</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">电子</a>
+                    <a href="#" class="popover-item" @click="title='电子'">电子</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">说唱</a>
+                    <a href="#" class="popover-item" @click="title='说唱'">说唱</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">轻音乐</a>
+                    <a href="#" class="popover-item" @click="title='轻音乐'">轻音乐</a>
                   </li>
                 </ol>
               </dd>
@@ -78,16 +78,16 @@
               <dd>
                 <ol>
                   <li>
-                    <a href="#" class="popover-item">清晨</a>
+                    <a href="#" class="popover-item" @click="title='清晨'">清晨</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">夜晚</a>
+                    <a href="#" class="popover-item" @click="title='夜晚'">夜晚</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">学习</a>
+                    <a href="#" class="popover-item" @click="title='学习'">学习</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">工作</a>
+                    <a href="#" class="popover-item" @click="title='工作'">工作</a>
                   </li>
                 </ol>
               </dd>
@@ -102,13 +102,13 @@
               <dd>
                 <ol>
                   <li>
-                    <a href="#" class="popover-item">伤感</a>
+                    <a href="#" class="popover-item" @click="title='伤感'">伤感</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">安静</a>
+                    <a href="#" class="popover-item" @click="title='安静'">安静</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">快乐</a>
+                    <a href="#" class="popover-item" @click="title='快乐'">快乐</a>
                   </li>
                 </ol>
               </dd>
@@ -123,13 +123,13 @@
               <dd>
                 <ol>
                   <li>
-                    <a href="#" class="popover-item">电影原声</a>
+                    <a href="#" class="popover-item" @click="title='电影原声'">电影原声</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">网络歌曲</a>
+                    <a href="#" class="popover-item" @click="title='网络歌曲'">网络歌曲</a>
                   </li>
                   <li>
-                    <a href="#" class="popover-item">经典</a>
+                    <a href="#" class="popover-item" @click="title='经典'">经典</a>
                   </li>
                 </ol>
               </dd>
@@ -149,49 +149,10 @@
           </a>
           <div class="desc">
             <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">陈粒</span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">陈粒</span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">陈粒</span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">陈粒</span>
+            <span class="singer">
+              <span class="extr">by&nbsp;</span>
+              <span class="singer-name">陈粒</span>
+            </span>
           </div>
         </div>
         <div class="classfiy-item">
@@ -206,10 +167,75 @@
           <div class="desc">
             <a href="#" class="music-title">房东的猫</a>
             <span class="singer">
-                <span class="extr">by&nbsp;</span>
-                <span class="singer-name">陈粒</span>
+              <span class="extr">by&nbsp;</span>
+              <span class="singer-name">陈粒</span>
             </span>
           </div>
+        </div>
+        <div class="classfiy-item">
+          <a class="music-container">
+            <img
+              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
+            >
+            <i class="mask">
+              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
+            </i>
+          </a>
+          <div class="desc">
+            <a href="#" class="music-title">房东的猫</a>
+            <span class="singer">
+              <span class="extr">by&nbsp;</span>
+              <span class="singer-name">陈粒</span>
+            </span>
+          </div>
+        </div>
+        <div class="classfiy-item">
+          <a class="music-container">
+            <img
+              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
+            >
+            <i class="mask">
+              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
+            </i>
+          </a>
+          <div class="desc">
+            <a href="#" class="music-title">房东的猫</a>
+            <span class="singer">
+              <span class="extr">by&nbsp;</span>
+              <span class="singer-name">陈粒</span>
+            </span>
+          </div>
+        </div>
+        <div class="classfiy-item">
+          <a class="music-container">
+            <img
+              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
+            >
+            <i class="mask">
+              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
+            </i>
+          </a>
+          <div class="desc">
+            <a href="#" class="music-title">房东的猫</a>
+            <span class="singer">
+              <span class="extr">by&nbsp;</span>
+              <span class="singer-name">陈粒</span>
+            </span>
+          </div>
+        </div>
+        <div class="pagination-box">
+          <ul class="pagination pagination-sm">
+            <li class="page-item">
+              <a class="page-link" href="#"> 上一页</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">下一页</a>
+            </li>
+            <li class="page-item">
+              <input type="number" placeholder="页码" style="width:55px;"/>
+              <input type="submit" value="提交" class="submit">
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -219,7 +245,8 @@
 export default {
   data() {
     return {
-      popupVisible: false
+      popupVisible: false,
+      title:'全部'
     };
   },
   methods: {
@@ -231,16 +258,15 @@ export default {
 </script>
 <style scoped>
 .classfiy-container {
-  
   width: 978px;
   margin: 0 auto;
-  
-  padding: 20px 20px 10px;
+  /* padding: 20px 20px 10px; */
 }
-.classfiy-content{
-    position: absolute;
-    border: 1px solid #d3d3dd;
-    padding: 20px 20px 10px;
+.classfiy-content {
+  position: absolute;
+  width: 978px;
+  border: 1px solid #d3d3dd;
+  padding: 20px 20px 10px;
 }
 .classfiy-top-nav {
   height: 48px;
@@ -291,7 +317,7 @@ export default {
 }
 .popover-container {
   position: absolute;
-  
+
   /* border: 1px solid black; */
 }
 .btn-all {
@@ -365,16 +391,11 @@ li a:hover {
   overflow: hidden;
   margin-top: 25px;
 }
-/* .classfiy-list{
-    
-    border-right: 1px solid #d3d3d3;
-    border-left:1px solid #d3d3d3;
-    border-bottom: 1px solid #d3d3d3; 
-} */
 .classfiy-item {
   width: 187px;
   position: relative;
   float: left;
+  margin-bottom: 25px;
 }
 .classfiy-item img {
   width: 140px;
@@ -389,19 +410,41 @@ li a:hover {
 }
 .mask {
   position: absolute;
-  top: 70%;
+  top: 65%;
   left: 62%;
   opacity: 0;
 }
 .music-container:hover .mask {
   opacity: 1;
 }
-.music-title,.singer{
-    display: block;
-    margin-left: 25px;
-    font-size: 14px;
+.music-title,
+.singer {
+  display: block;
+  margin-left: 25px;
+  font-size: 14px;
 }
-/* .extr{
-    color: 
-} */
+.music-title {
+  color: black;
+}
+.extr {
+  color: #a6a6a6;
+}
+.singer-name {
+  color: gray;
+}
+/* 分页 */
+.pagination-box {
+  clear: both;
+  margin-left: 40%;
+  margin-top: 15px;
+  display: block;
+  /* position: absolute; */
+}
+.submit{
+  border-radius: 8px;
+  border: transparent;
+  font-size: 13px;
+  color: #d00000;
+  background-color: #f1f1f1;
+}
 </style>

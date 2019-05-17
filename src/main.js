@@ -2,7 +2,6 @@ import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.css' 
 import 'bootstrap/dist/js/bootstrap.js'
 import 'font-awesome/css/font-awesome.min.css'
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 // 安装路由

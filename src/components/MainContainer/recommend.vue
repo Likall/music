@@ -11,10 +11,10 @@
           <a class="breadcrumb-item" href="#">民谣</a>
           <a class="breadcrumb-item" href="#">电子</a>
         </nav>
-        <span class="more">
+        <router-link class="more" to="/classfiy">
           <span>更多</span>
           <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-        </span>
+        </router-link>
       </div>
       <!-- 详情列表 -->
       <ul>
