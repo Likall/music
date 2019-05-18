@@ -56,7 +56,7 @@
 </template>
 
 <script>
-    import Register from "../Login/register.vue"
+    import Register from ".//register.vue"
     export default {
         data(){
             return{

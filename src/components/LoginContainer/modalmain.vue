@@ -14,8 +14,8 @@
 
 <script>
     // 引入Login和Register组件
-    import Login from "../Login/login.vue"
-    import Register from "../Login/register.vue"
+    import Login from ".//login.vue"
+    import Register from ".//register.vue"
     export default {
         data(){
             return{

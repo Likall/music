@@ -32,18 +32,18 @@
           </div>
         </form>
         <button class="btn btn-sm btn-topbar" type="button">创作中心</button>
-<<<<<<< HEAD
-        <div  class="login-topbar" >
-        <a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal" >登录</a>
+        <div  class="login-topbar" v-show="false">
+        <a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal"  >登录</a>
         <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
+        <router-link to="/selfcenter" class="login-topbar">
+          <img src="../../img/li/zhanghuimei.png" class="avater">
+        </router-link>
         <!--<router-link to="/login" class="login-topbar" >-->
           <!--<a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal" >登录</a>-->
           <!--<i class="fa fa-caret-down" aria-hidden="true"></i>-->
         <!--</router-link>-->
-=======
-        
->>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
+
       </nav>
     </div>
     <!-- 第二个导航栏 -->
@@ -83,10 +83,9 @@
         </ul>
       </nav>
     </div>
-<<<<<<< HEAD
+
     <ModalMain></ModalMain>
-=======
->>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
+
   </header>
 </template>
 <style scoped>
@@ -317,12 +316,16 @@
   background-color: #ac0000;
   border-radius: 20px;
 }
+  /*个人中心头像*/
+  .avater{
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+  }
 </style>
 <script>
-<<<<<<< HEAD
-  import ModalMain from "../Login/modalmain.vue"
-=======
->>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
+
+  import ModalMain from "../LoginContainer/modalmain.vue"
 export default {
   data(){
     return{
@@ -333,12 +336,9 @@ export default {
     changeToRakingList(){
       this.type = 'rakinglist';
     }
-<<<<<<< HEAD
   },
   components:{
     ModalMain
-=======
->>>>>>> ea2527d110dd573da7f300ee68ba24e783a058c5
   }
 };
 </script>

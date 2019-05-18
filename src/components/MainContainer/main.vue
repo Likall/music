@@ -60,11 +60,9 @@ export default {
 .main-list {
   width: 100%;
   height: 1343px;
-  /* border: 1px solid blue; */
 }
 .main-content {
   width: 980px;
-  /* border: 1px solid gray; */
   margin: 0 auto;
 }
 .main-left-content {
@@ -74,7 +72,6 @@ export default {
 }
 .main-right-container {
   width: 250px;
-  /* border: 1px solid gold; */
   float: right;
   height: 20px;
 }
