@@ -1,7 +1,7 @@
 // 配置文件
 // 1.配置输入，输出路径
 const path = require('path')
-
+const webpack = require('webpack')
 module.exports = {
     entry:path.join(__dirname,"./src/main.js"),
     output:{
@@ -21,7 +21,16 @@ module.exports = {
     },
     resolve: {
         alias:{
-            'vue$':'vue/dist/vue.js'//导入vue完整包
+            'vue$':'vue/dist/vue.js',//导入vue完整包
+            'jquery': 'jquery',
+            'jquery-ui':'jquery-ui'
         }
-    }
+    },
+    // 配置jquery插件
+    plugins:[
+        new webpack.ProvidePlugin({
+            $:"jquery",
+            jQuery:"jquery"
+        })
+    ]
 }
