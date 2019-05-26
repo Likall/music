@@ -36,7 +36,7 @@
         <a class="link-login-topbar" style="color:#979797"  data-toggle="modal" data-target="#myModal"  >登录</a>
         <i class="fa fa-caret-down" aria-hidden="true"></i>
         </div>
-        <router-link to="/selfcenter" class="login-topbar">
+        <router-link to="/selfcenter" class="login-topbar"  style="background-color:transparent;">
           <img src="../../img/li/zhanghuimei.png" class="avater">
         </router-link>
         <!--<router-link to="/login" class="login-topbar" >-->
