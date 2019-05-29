@@ -10,6 +10,7 @@ Vue.use(VueRouter)
 import axios from 'axios'
 // import Vueaxios from 'vue-axios'
 // Vue.use(axios,Vueaxios)
+// 配置入口
 axios.defaults.baseURL = 'http://localhost:3000'
 Vue.prototype.$axios = axios
 

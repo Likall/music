@@ -3,14 +3,14 @@
     <div class="classfiy-content">
       <!-- 上面标题部分 -->
       <div class="classfiy-top-nav">
-        <h3 class="title" >{{title}}</h3>
+        <h3 class="title">{{title}}</h3>
         <button class="btn-list" @click="popupVisible = !popupVisible">
           选择分类
           <i class="fa fa-caret-down" aria-hidden="true"></i>
         </button>
         <div class="popover-container" v-show="popupVisible">
           <div class="popover-box">
-            <button class="btn-all">全部风格</button>
+            <button class="btn-all" @click="getCatList('全部')">全部风格</button>
             <dl class="popover-type" style="margin-top:5px;border-top:1px solid #d3d3d3;">
               <!-- 标题 -->
               <dt class="popover-title">
@@ -20,20 +20,8 @@
               <!-- 内容 -->
               <dd>
                 <ol>
-                  <li>
-                    <a href="#" class="popover-item" @click="title = '华语'">华语</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='欧美'">欧美</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='日语'">日语</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='汉语'">韩语</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='粤语'">粤语</a>
+                  <li v-for="(item1,index) in language" :key="item1.category+index">
+                    <a href="#" class="popover-item" @click="getCatList(item1.name)">{{item1.name}}</a>
                   </li>
                 </ol>
               </dd>
@@ -47,23 +35,8 @@
               <!-- 内容 -->
               <dd>
                 <ol>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='流行'">流行</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='摇滚'">摇滚</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='民谣'">民谣</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='电子'">电子</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='说唱'">说唱</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='轻音乐'">轻音乐</a>
+                  <li v-for="(item2,index) in style" :key="item2.category+index">
+                    <a href="#" class="popover-item" @click="getCatList(item2.name)">{{item2.name}}</a>
                   </li>
                 </ol>
               </dd>
@@ -77,17 +50,8 @@
               <!-- 内容 -->
               <dd>
                 <ol>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='清晨'">清晨</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='夜晚'">夜晚</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='学习'">学习</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='工作'">工作</a>
+                  <li v-for="(item3,index) in scence" :key="item3.category+index">
+                    <a href="#" class="popover-item" @click="getCatList(item3.name)">{{item3.name}}</a>
                   </li>
                 </ol>
               </dd>
@@ -101,14 +65,8 @@
               <!-- 内容 -->
               <dd>
                 <ol>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='伤感'">伤感</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='安静'">安静</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='快乐'">快乐</a>
+                  <li v-for="(item4,index) in fellings" :key="item4.category+index">
+                    <a href="#" class="popover-item" @click="getCatList(item4.name)">{{item4.name}}</a>
                   </li>
                 </ol>
               </dd>
@@ -122,14 +80,8 @@
               <!-- 内容 -->
               <dd>
                 <ol>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='电影原声'">电影原声</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='网络歌曲'">网络歌曲</a>
-                  </li>
-                  <li>
-                    <a href="#" class="popover-item" @click="title='经典'">经典</a>
+                  <li v-for="(item5,index) in theme" :key="item5.category+index">
+                    <a href="#" class="popover-item" @click="getCatList(item5.name)">{{item5.name}}</a>
                   </li>
                 </ol>
               </dd>
@@ -138,103 +90,38 @@
         </div>
       </div>
       <div class="classfiy-list">
-        <div class="classfiy-item">
+        <div class="classfiy-item" v-for="items in playLists" :key="items.id">
           <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
+            <img :src="items.coverImgUrl">
             <i class="mask">
               <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
             </i>
           </a>
           <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
+            <a href="#" class="music-title">{{items.name}}</a>
             <span class="singer">
               <span class="extr">by&nbsp;</span>
-              <span class="singer-name">陈粒</span>
-            </span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">
-              <span class="extr">by&nbsp;</span>
-              <span class="singer-name">陈粒</span>
-            </span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">
-              <span class="extr">by&nbsp;</span>
-              <span class="singer-name">陈粒</span>
-            </span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">
-              <span class="extr">by&nbsp;</span>
-              <span class="singer-name">陈粒</span>
-            </span>
-          </div>
-        </div>
-        <div class="classfiy-item">
-          <a class="music-container">
-            <img
-              src="http://p2.music.126.net/yacgbi4paTbPI-GHA50RhA==/109951163666322440.jpg?param=140y140"
-            >
-            <i class="mask">
-              <i class="fa fa-play-circle fa-1g" aria-hidden="true"></i>
-            </i>
-          </a>
-          <div class="desc">
-            <a href="#" class="music-title">房东的猫</a>
-            <span class="singer">
-              <span class="extr">by&nbsp;</span>
-              <span class="singer-name">陈粒</span>
+              <span class="singer-name">{{items.creator.nickname}}</span>
             </span>
           </div>
         </div>
         <div class="pagination-box">
           <ul class="pagination pagination-sm">
             <li class="page-item">
-              <a class="page-link" href="#"> 上一页</a>
+              <button
+                type="button"
+                :class="{'page-link':true,'disabled':dis}"
+                @click="getBefore"
+                :disabled="dis"
+              >上一页</button>
             </li>
             <li class="page-item">
-              <a class="page-link" href="#">下一页</a>
+              <button class="page-link" @click="getAfter">下一页</button>
             </li>
-            <li class="page-item">
+            <!-- <li class="page-item">
               <input type="number" placeholder="页码" style="width:55px;"/>
               <input type="submit" value="提交" class="submit">
-            </li>
+            </li>-->
           </ul>
         </div>
       </div>
@@ -246,13 +133,110 @@ export default {
   data() {
     return {
       popupVisible: false,
-      title:'全部'
+      title: "全部",
+      playLists: [], //歌单列表
+      pageLastUpdateTime: null, //最后一次更新时间
+      limitLength: 30, //请求的数据的个数
+      pageCount: [],
+      dis: true,
+      language :[],
+      style : [],
+      scence :[],
+      fellings : [],
+      theme : []
     };
   },
   methods: {
     showpop() {
       this.popupVisible = true;
+    },
+    getAfter() {
+      //下一页
+      var _this = this;
+      console.log(_this.title);
+      this.$axios
+        .get("/top/playlist/highquality", {
+          params: { before: this.pageLastUpdateTime,
+           limit: this.limitLength, 
+           cat:_this.title}
+        })
+        .then(function(response) {
+          if (response.data.code == 200) {
+            //请求成功
+            _this.playLists = response.data.playlists;
+            console.log( _this.playLists);
+            _this.pageLastUpdateTime =
+            _this.playLists[_this.playLists.length - 1].updateTime;
+          }
+        });
+    },
+    getBefore() {
+      console.log(this.pageCount);
+    },
+    judgePage() {
+      if ((this.pageCount.length = 0)) {
+        //页数判断，如果为0，按钮设置为不可点击
+        this.dis = true;
+      } else {
+        this.dis = false;
+      }
+    },
+    // 获得对应的歌单
+    getCatList(name){
+      var _this = this;
+      this.$axios.get("/top/playlist/highquality",{
+        params:{
+          cat:name
+        }
+      }).then(function(response){
+        _this.playLists = response.data.playlists;
+        _this.title = name;
+      })
     }
+  },
+  mounted() {
+    var _this = this;
+    // 获得全部歌单列表
+    this.$axios
+      .get("/top/playlist/highquality", {
+        params: { limit: this.limitLength }
+      })
+      .then(function(response) {
+        if (response.data.code == 200) {
+          //请求成功
+          _this.playLists = response.data.playlists;
+          _this.pageLastUpdateTime =
+            _this.playLists[_this.playLists.length - 1].updateTime;
+        }
+      });
+    // 获得全部歌单分类
+    this.$axios.get("/playlist/catlist").then(function(response) {
+      if (response.data.code == 200) {
+        // 获得categorys
+        var categorys = response.data.categories;
+        var subName = []; //存放所有分类
+        // 语种数组
+       
+        subName = response.data.sub;
+        for (var i = 0; i < subName.length; i++) {
+          if(subName[i].category == 0){
+            _this.language.push(subName[i]);
+          }
+          if(subName[i].category == 1){
+           _this.style.push(subName[i])
+          }
+          if(subName[i].category == 2){
+            _this.scence.push(subName[i]);
+          }
+          if(subName[i].category == 3){
+            _this.fellings.push(subName[i])
+          }
+          if(subName[i].category == 4){
+            _this.theme.push(subName[i]);
+          }
+        }
+      }
+    });
   }
 };
 </script>
@@ -306,8 +290,8 @@ export default {
   left: 75px;
 }
 .popover-box {
-  width: 550px;
-  height: 344px;
+  width: 650px;
+  /* height: 344px; */
   border: 1px solid #d3d3d3;
   position: absolute;
   top: 20px;
@@ -344,7 +328,6 @@ export default {
 .popover-title {
   padding: 0px 15px 0px 15px;
   border-right: 1px solid #d3d3d3;
-  height: 56.5px;
 }
 .popover-name {
   font-size: 14px;
@@ -352,31 +335,38 @@ export default {
 dl {
   margin: 0px;
   padding: 0px;
-  height: 56.5px;
-  line-height: 56.5px;
-  /* height: 24px; */
+  display: flex;
 }
-dt,
-dd {
-  display: inline-block;
+
+dt{
+  width: 95px;
+}
+
+dt span{
+   display: inline-block;
+  margin-top: 10px;
 }
 dd {
   margin: 0;
+  display: flex;
+  width: 500px;
 }
 ol {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 ol li {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 5px;
   display: inline-block;
-  padding: 0px 8px 0px 15px;
+  padding: 0px 8px 10px 15px;
   font-size: 12px;
   border-right: 1px solid #d3d3d3;
-  height: 15px;
-  line-height: 15px;
+  /* height: 15px;
+  line-height: 20px; */
 }
 li a {
   color: #666666;
@@ -390,18 +380,20 @@ li a:hover {
   display: inline-block;
   overflow: hidden;
   margin-top: 25px;
+  box-sizing: border-box;
+  margin-left: 25px;
 }
 .classfiy-item {
   width: 187px;
   position: relative;
   float: left;
   margin-bottom: 25px;
+  /* margin-left: 15px; */
 }
 .classfiy-item img {
   width: 140px;
   height: 140px;
   transition: all 0.5s;
-  margin-left: 25px;
 }
 .classfiy-item img:hover {
   transform: scale(1.1);
@@ -410,8 +402,8 @@ li a:hover {
 }
 .mask {
   position: absolute;
-  top: 65%;
-  left: 62%;
+  top: 62%;
+  left: 75%;
   opacity: 0;
 }
 .music-container:hover .mask {
@@ -422,6 +414,11 @@ li a:hover {
   display: block;
   margin-left: 25px;
   font-size: 14px;
+  width: 140px;
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .music-title {
   color: black;
@@ -440,7 +437,15 @@ li a:hover {
   display: block;
   /* position: absolute; */
 }
-.submit{
+.page-item {
+  margin: 1px;
+}
+.disabled {
+  background-color: #f4f4f4;
+  color: #cacaca;
+  border: 1px solid darkgray;
+}
+.submit {
   border-radius: 8px;
   border: transparent;
   font-size: 13px;

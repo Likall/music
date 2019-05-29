@@ -5,11 +5,12 @@
         <i class="fa fa-stop-circle" aria-hidden="true"></i>
         <span class="title">热门推荐</span>
         <nav class="breadcrumb">
-          <a class="breadcrumb-item" href="#">华语</a>
-          <a class="breadcrumb-item" href="#">流行</a>
-          <a class="breadcrumb-item" href="#">摇滚</a>
-          <a class="breadcrumb-item" href="#">民谣</a>
-          <a class="breadcrumb-item" href="#">电子</a>
+          <a
+            class="breadcrumb-item"
+            href="#"
+            v-for="navItem in recommandsNav"
+            :key="navItem.id"
+          >{{navItem.name}}</a>
         </nav>
         <router-link class="more" to="/classfiy">
           <span>更多</span>
@@ -18,120 +19,18 @@
       </div>
       <!-- 详情列表 -->
       <ul>
-        <li>
+        <li v-for="(items,index) in recommandsInfo" :key="items.id">
           <div class="list-container">
-            <img
-              src="http://p1.music.126.net/_c03p4DINPzVvGFh2tKmEA==/109951164061344469.jpg?param=140y140"
-            >
+            <router-link to="">
+              <img :src="items.coverImgUrl">
+            </router-link>
             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+              <i class="fa fa-headphones" aria-hidden="true"></i>
+              <span class="number">{{items.playCount}}</span>
+              <i class="fa fa-play-circle-o" aria-hidden="true"></i>
             </div>
             <p class="desc">
-              <a href="#">一周新歌推荐</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p2.music.126.net/QkAXUWp9qubSQt3cjq9QEQ==/109951163294274521.jpg?param=140y140"
-            >
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">总有一个人教会你成长</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p2.music.126.net/2MsstS-M9w5-li0aRy3sUQ==/1380986606815861.jpg?param=140y140"
-            >
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">超级好听的欧美良曲</a>
-            </p>
-            <p></p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p2.music.126.net/XbSfDMz8Tnh102K_i6jtdA==/109951164053640019.jpg?param=140y140"
-            >
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">69期 - 鲜香麻辣（ 结婚加长版 ）</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p1.music.126.net/_c03p4DINPzVvGFh2tKmEA==/109951164061344469.jpg?param=140y140">
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">听完这些歌，我们就都放下吧。</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p1.music.126.net/_c03p4DINPzVvGFh2tKmEA==/109951164061344469.jpg?param=140y140">
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">纪念Bob Marley雷鬼之父 | 来自第三世界的王者</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p1.music.126.net/_c03p4DINPzVvGFh2tKmEA==/109951164061344469.jpg?param=140y140">
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">我的主要成分：2%的可爱+98%的单身</a>
-            </p>
-          </div>
-        </li>
-        <li>
-          <div class="list-container">
-            <img
-              src="http://p1.music.126.net/_c03p4DINPzVvGFh2tKmEA==/109951164061344469.jpg?param=140y140">
-             <div class="bottom">
-                <i class="fa fa-headphones" aria-hidden="true"></i>
-                <span class="number">1086万</span>
-                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-            </div>
-            <p class="desc">
-              <a href="#">晚安(cover颜人中)</a>
+              <a href="#">{{items.name}}</a>
             </p>
           </div>
         </li>
@@ -141,21 +40,44 @@
 </template>
 <script>
 export default {
-    // data(){
-    //   return {};
-    // },
-    // mounted(){
-    //  this.$axios.get('/search?keywords=fakelove').then(function(response){
-    //       console.log(response);
-    //    })
-    // }
+  data() {
+    return {
+      recommandsInfo: [],
+      recommandsNav: []
+    };
+  },
+  mounted() {
+    // 获得热门推荐歌曲
+    var _this = this;
+    this.$axios.get("/top/playlist?limit=8&order=hot").then(function(response) {
+      if (response.data.code == 200) {
+        //请求成功
+        // console.log(response.data.playlists);
+        // var hotSheetsObj = [];
+        for (var i = 0; i < response.data.playlists.length; i++) {
+          _this.recommandsInfo.push(response.data.playlists[i]);
+        }
+        console.log(_this.recommandsInfo);
+      }
+    });
+
+    //  获得热门的歌单分类
+    this.$axios.get("/playlist/hot").then(function(response) {
+      if (response.data.code == 200) {
+        // console.log(response);
+        for (var j = 0; j < 7; j++) {
+          _this.recommandsNav.push(response.data.tags[j]);
+        }
+        console.log(_this.recommandsNav);
+      }
+    });
+  }
 };
 </script>
 
 <style scoped>
 .recommend-container {
   width: 689px;
-  
 }
 .recommend-top-nav {
   height: 38px;
@@ -208,38 +130,44 @@ ul li {
 li img {
   width: 140px;
   height: 140px;
-  
 }
-.desc{
-   
-    font-size: 14px;
+.desc {
+  font-size: 14px;
+  height: 45px;
+  overflow: hidden;
 }
-.list-container{
-    width: 140px;
-   float: right;
-   position: relative;
-    /* margin-left:40px;  */
+.desc a{
+  display: inline-block;
+  height: 100%;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
 }
-.bottom{
-    position: absolute;
-    top: 115px;
-    height: 25px;
-    width: 140px;
-    background-color: rgba(5, 5, 5, 0.7);
-    color: #c1c1c1;
-    font-size: 14px;
-    line-height: 25px;
-    background-position:0 -537px; 
+.list-container {
+  width: 140px;
+  float: right;
+  position: relative;
+  /* margin-left:40px;  */
 }
-.fa-headphones{
+.bottom {
+  position: absolute;
+  top: 115px;
+  height: 25px;
+  width: 140px;
+  background-color: rgba(5, 5, 5, 0.7);
+  color: #c1c1c1;
+  font-size: 14px;
+  line-height: 25px;
+  background-position: 0 -537px;
+}
+.fa-headphones {
   margin-left: 10px;
 }
-.fa-play-circle-o{
+.fa-play-circle-o {
   float: right;
   line-height: 25px;
   margin-right: 10px;
 }
-a{
+a {
   color: black;
 }
 </style>
