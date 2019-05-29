@@ -14,6 +14,10 @@ import MusicReview from './components/ReviewContainer/musicreview.vue'
 import ReviewOfMusic from './components/MusicContainer/reviewofmusic.vue'
 import EditSelfInfo from './components/SelfContainer/editselfinfo.vue'
 import ChangeAvatar from './components/SelfContainer/changeavatar.vue'
+import SingerSong from './components/SingerContainer/singersonglist.vue'
+import HotWorks from './components/SingerContainer/singerListContainer/hotworks.vue'
+import Album from  './components/SingerContainer/singerListContainer/album.vue'
+import AboutMV from './components/SingerContainer/singerListContainer/aboutmv.vue'
 // 创建路由对象，配置路由规则
 var router = new VueRouter({
     routes:[
@@ -32,7 +36,17 @@ var router = new VueRouter({
         {path:'/selfcenter/editselfinfo',component:EditSelfInfo},
         {path:'/selfcenter/editselfinfo/changeavatar',component:ChangeAvatar},
         {path:'/newmusic',component:NewmusicList},
-        {path:'/musicreview',component:ReviewOfMusic}
+        {path:'/musicreview',component:ReviewOfMusic},
+        {
+            path:"/singer/singersong",
+            component:SingerSong,
+            children:[
+                {path:"/",redirect: "hotworks"},
+                {path:"hotworks",component:HotWorks},
+                {path:"album",component:Album},
+                {path:"abomv",component:AboutMV}
+            ]
+        },
     ]
 })
 export default router

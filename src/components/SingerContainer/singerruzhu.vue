@@ -7,13 +7,23 @@
         <div class="singer">
             <ul>
                 <li>
-                    <div class="singer-container">
-                        <img src="../../img/li/zhanghuimei.png">
-                        <p class="singerinfo">
-                            张惠妹
-                            <i class="fa fa-user-circle" aria-hidden="true"></i>
-                        </p>
-                    </div>
+                    <router-link to="/singer/singersong">
+                        <div class="singer-container">
+                            <img src="../../img/li/zhanghuimei.png">
+                            <p class="singerinfo">
+                                张惠妹
+                                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            </p>
+                        </div>
+                    </router-link>
+
+                    <!--<div class="singer-container">-->
+                        <!--<img src="../../img/li/zhanghuimei.png">-->
+                        <!--<p class="singerinfo">-->
+                            <!--张惠妹-->
+                            <!--<i class="fa fa-user-circle" aria-hidden="true"></i>-->
+                        <!--</p>-->
+                    <!--</div>-->
 
                 </li>
                 <li>
