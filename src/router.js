@@ -14,6 +14,9 @@ import MusicReview from './components/ReviewContainer/musicreview.vue'
 import ReviewOfMusic from './components/MusicContainer/reviewofmusic.vue'
 import EditSelfInfo from './components/SelfContainer/editselfinfo.vue'
 import ChangeAvatar from './components/SelfContainer/changeavatar.vue'
+import musicList from './components/SongListContainer/musiclist.vue'
+import AlumbList from './components/NewMusicContainer/alumblist.vue'
+import ReviewOfMusic from './components/MusicContainer/reviewofmusic.vue'
 // 创建路由对象，配置路由规则
 var router = new VueRouter({
     routes:[
@@ -32,7 +35,9 @@ var router = new VueRouter({
         {path:'/selfcenter/editselfinfo',component:EditSelfInfo},
         {path:'/selfcenter/editselfinfo/changeavatar',component:ChangeAvatar},
         {path:'/newmusic',component:NewmusicList},
-        {path:'/musicreview',component:ReviewOfMusic}
+        {path:'/playlist/:id',component:musicList},
+        {path:'/alumb',component:AlumbList},
+        {path:'/song',component:ReviewOfMusic}
     ]
 })
 export default router

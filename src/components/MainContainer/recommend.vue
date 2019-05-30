@@ -30,7 +30,7 @@
               <i class="fa fa-play-circle-o" aria-hidden="true"></i>
             </div>
             <p class="desc">
-              <a href="#">{{items.name}}</a>
+              <router-link to="/classfiy">{{items.name}}</router-link>
             </p>
           </div>
         </li>

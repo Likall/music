@@ -22,7 +22,8 @@ Vue.component(Popup.name, Popup);
 import Icon from 'vue-svg-icon/Icon.vue'
 
 Vue.component('Icon', Icon);   //引入svg-icon
-
+// 
+import "./img/iconfont/css/iconfont.css"
 // 导入路由js
 import router from './router.js'
 // 导入组件

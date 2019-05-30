@@ -2,7 +2,7 @@
   <div class="musicreview-container">
     <div class="musicreview-content">
       <div class="musicreview-list-top">
-        <h4>评论</h4>
+        <h4 class="musicreview-title">评论</h4>
         <span class="musicreview-total">
           共
           <span class="musicreview-flag">10</span>条评论
@@ -72,20 +72,18 @@ export default {
 </script>
 <style scoped>
 .musicreview-container {
-  width: 978px;
-  margin: 0 auto;
+  width: 100%;
+  margin-top: 25px;
 }
 .musicreview-content {
-  position: absolute;
-  width: 978px;
-  border-left: 1px solid #d3d3dd;
-  border-right: 1px solid #d3d3dd;
-  border-bottom: 1px solid #d3d3dd;
-  padding: 20px 20px 10px;
+  width: 100%;
 }
 .musicreview-list-top {
   height: 48px;
   border-bottom: 2px solid #d00000;
+}
+.musicreview-title{
+  font-size: 20px;
 }
 .musicreview-list-top h4 {
   margin: 0;

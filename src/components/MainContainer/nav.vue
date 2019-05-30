@@ -80,11 +80,6 @@
               <span>新碟上架</span>
             </router-link>
           </li>
-           <li class="nav-item md-nav-item-topbar s3">
-            <router-link class="nav-link" to="/musicreview">
-              <span>评论</span>
-            </router-link>
-          </li>
         </ul>
       </nav>
     </div>

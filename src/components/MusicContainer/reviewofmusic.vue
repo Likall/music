@@ -3,7 +3,7 @@
         <section>
             <MusicDetial></MusicDetial>
         </section>
-        <section>
+        <section class="review">
             <MusicReview></MusicReview>
         </section>
     </div>
@@ -23,5 +23,12 @@ export default {
     width: 978px;
     /* border: 1px solid #d3d3d3; */
     margin: 0 auto;
+}
+.review{
+    padding: 20px;
+    margin-top: -25px;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3;
 }
 </style>

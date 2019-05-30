@@ -34,7 +34,7 @@
                 </a>
 
                 <div class="desc">
-                  <a href="#" class="music-title">路过人间</a>
+                  <router-link to="/alumb" class="music-title">路过人间</router-link>
                   <span class="singer">郁可唯</span>
                 </div>
               </div>

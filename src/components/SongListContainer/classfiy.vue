@@ -98,7 +98,7 @@
             </i>
           </a>
           <div class="desc">
-            <a href="#" class="music-title">{{items.name}}</a>
+            <router-link class="music-title" :to="'/playlist/'+items.id">{{items.name}}</router-link>
             <span class="singer">
               <span class="extr">by&nbsp;</span>
               <span class="singer-name">{{items.creator.nickname}}</span>
@@ -242,13 +242,13 @@ export default {
 </script>
 <style scoped>
 .classfiy-container {
-  width: 978px;
+  width: 980px;
   margin: 0 auto;
   /* padding: 20px 20px 10px; */
 }
 .classfiy-content {
   position: absolute;
-  width: 978px;
+  width: 980px;
   border: 1px solid #d3d3dd;
   padding: 20px 20px 10px;
 }
